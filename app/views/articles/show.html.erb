@@ -9,20 +9,8 @@
                   data: { confirm: "Are you sure?" } %></li>
 </ul>
 
+<h1>Comments</h1>
+<%= render @article.comments %>
+
 <h1>Add a comment:</h1>
-<%= form_with model: [@article, @article.comments.build] do |form|%>
-    <p>
-       <%= form.label :commenter%><br>
-       <%= form.text_field :commenter%>
-    </p>
-
-    <p>
-       <%= form.label :body%><br>
-       <%= form.text_area :body%>
-    </p>
-
-    <p>
-       <%= form.submit%>
-    </p>
-<% end%>
-
+<%= render 'comments/form'%>
